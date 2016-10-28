@@ -1,0 +1,16 @@
+# Prisbot
+#CTF PRISALGOESGI_GIT :
+
+#encode function
+def PRISALGOESGI_GIT(jambon): 
+    abc = base64.b64encode(jambon)
+    xyz = []
+    for i in abc:
+        xyz.append(i)
+    D = "{}{}".format(''.join(xyz[len(xyz)/2:]),''.join(xyz[:len(xyz)/2]))
+    DD = base64.b32encode(codecs.encode(D, 'rot_13'))
+    DDD = [] 
+    for i in DD:
+        DDD.append("{},".format(ord(i)+1))
+    kebab = base64.b16encode(''.join(DDD)) #logs 'chiffrés'
+    return kebab
